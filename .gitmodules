@@ -1,0 +1,3 @@
+[submodule "ig-v1.0.0"]
+	path = ig-v1.0.0
+	url = git@github.com:dugancathal/ig-v-1.0.0.git
