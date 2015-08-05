@@ -4,7 +4,7 @@ name: Intermediate Git
 ---
 
 class: center, middle
-# Git's easy, right?
+# Git - The Why/The How/The What
 
 ---
 
@@ -30,7 +30,7 @@ class: center, middle
 * Git
 * [And the list goes on ...](https://en.wikipedia.org/wiki/Revision_control#External_links)
 
-** [A "brief" look at SCM systems](http://ericsink.com/vcbe/html/index.html)
+** [A "brief" look at VCSs](http://ericsink.com/vcbe/html/index.html)
 
 ---
 
@@ -39,6 +39,9 @@ class: center, middle
 * Collaboration (github, linux)
 * Simplicity (branching model, undo commands)
 * Speed (file system-based)
+
+--
+* Documentation (?)
 
 ---
 
@@ -65,6 +68,9 @@ class: center, middle
 --
 * stash (?)
 
+--
+* reflog (????)
+
 ---
 
 # Team
@@ -72,9 +78,7 @@ class: center, middle
 * pull
 * branch
 * merge/rebase
-* reflog
 
 ---
 
 # Examples
-

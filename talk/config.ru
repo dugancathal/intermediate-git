@@ -3,13 +3,13 @@ use Rack::Static,
   :root => "public"
 
 run lambda { |env|
-  @slide_content = File.wait_if_presenting('./slides.md')
+  @slide_content = File.read('./slides.md')
   [
     200,
     {
       'Content-Type'  => 'text/html',
       'Cache-Control' => 'public, max-age=86400'
     },
-    [ERB.new(File.wait_if_presenting('./slides.html')).result(binding)]
+    [ERB.new(File.read('./slides.html')).result(binding)]
   ]
 }
