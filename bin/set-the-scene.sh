@@ -11,6 +11,8 @@ if ! intmux list-sessions >/dev/null 2>&1; then
   sleep 1
 fi
 
+rm -rf /tmp/{tim,veronica}
+
 inpane 0
 telltmux clear Enter
 telltmux cd Space $PWD Enter

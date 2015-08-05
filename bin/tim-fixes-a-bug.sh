@@ -3,8 +3,10 @@ curdir=$(dirname $0)
 source $curdir/tmux-helpers.sh
 source $curdir/tim-config.sh
 
-cp -R $curdir/../igitit-ping/ $workdir
-telltmux "cd $workdir"
+echo 'Tim: PM found a bug'
+read
+inpane 0
+cp -R $curdir/../igitit-pong/ $workdir
 telltmux 'git status'
 telltmux 'rackup'
 intmux split-window -v
@@ -21,11 +23,7 @@ read
 intmux kill-pane
 telltmux C-c
 
-echo 'Tim: about to commit'
-read
+echo 'Tim: About to commit and push bugfix'
 telltmux 'git add .'
-telltmux 'git commit -m "As a user, I can ping"'
-
-echo 'Tim: about to add remote and push'
-read
-telltmux 'git push -u origin master'
+telltmux 'git commit -m "Riiiiight, pings __pong__"'
+telltmux 'git push origin master'

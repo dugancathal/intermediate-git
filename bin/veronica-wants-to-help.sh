@@ -5,14 +5,14 @@ source $curdir/veronica-config.sh
 
 echo 'Veronica: Setting up local' $workdir
 intmux split-window -h
-telltmux 'bash'
+telltmux 'exec bash'
 rm -rf $workdir
 mkdir -p $(dirname $workdir)
 
 echo 'Veronica: Setting up github (forking)'
 curl -s -u "${VERONICA_AUTH}" -XDELETE https://api.github.com/repos/${repopath} >/dev/null
 curl -s -u "${VERONICA_AUTH}" -XPOST https://api.github.com/repos/${parent_repopath}/forks >/dev/null
-#open http://github.com/${repopath}
+open http://github.com/${repopath}
 
 echo 'Veronica: About to clone and make changes'
 read
@@ -45,3 +45,12 @@ echo 'Veronica: Cleaning up'
 read
 intmux kill-pane
 telltmux C-c
+
+echo 'Veronica: about to commit'
+read
+telltmux 'git add .'
+telltmux 'git commit -m "As a user, I can see all pings"'
+
+echo 'Veronica: about to push'
+read
+telltmux 'git push -u origin master'

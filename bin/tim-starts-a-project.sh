@@ -13,7 +13,7 @@ curl -s -u "${TIM_AUTH}" -XPOST https://api.github.com/user/repos -d '{"name": "
 echo 'Tim: About to create project locally.'
 read
 inpane 0
-telltmux 'bash'
+telltmux 'exec bash'
 telltmux "cd $workdir"
 telltmux "echo '# Imma project!' > README.md"
 telltmux 'git init'
@@ -28,4 +28,3 @@ echo 'Tim: about to add remote and push'
 read
 telltmux "git remote add origin $repo"
 telltmux 'git push -u origin master'
-

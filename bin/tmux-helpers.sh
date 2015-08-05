@@ -17,6 +17,7 @@ function inpane() {
 }
 
 function telltmux() {
-  tmux -S $TMUX_SOCK send-keys "$@" C-m
+  tmux -S $TMUX_SOCK send-keys "$@"
+  intmux send-keys ENTER
+  sleep 0.5
 }
-
