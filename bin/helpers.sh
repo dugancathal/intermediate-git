@@ -21,3 +21,9 @@ function telltmux() {
   intmux send-keys ENTER
   sleep 0.5
 }
+
+function wait_if_presenting() {
+  if [ ! -z $PRESENTING ] {
+    wait_if_presenting
+  }
+}

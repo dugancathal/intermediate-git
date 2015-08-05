@@ -5,7 +5,7 @@ $pings = []
 
 post '/pings' do
   $pings << {created_at: Time.now}
-  {pong: true}.to_json
+  {ping: true}.to_json
 end
 
 get '/pings' do

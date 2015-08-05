@@ -1,6 +1,6 @@
 #!/bin/bash
 curdir=$(dirname $0)
-source $curdir/tmux-helpers.sh
+source $curdir/helpers.sh
 
 # Open TMUX
 if ! intmux list-sessions >/dev/null 2>&1; then
