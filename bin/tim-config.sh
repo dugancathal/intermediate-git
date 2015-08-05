@@ -8,7 +8,6 @@ else
   exit 1
 fi
 
-export repopath="${TIM_USERNAME}/igitit"
+export repopath="${TIM_USERNAME}/igitit-tim"
 export repo="git@github.com:${repopath}"
 export workdir='/tmp/tim/igitit'
-

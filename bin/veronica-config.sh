@@ -8,7 +8,6 @@ else
   exit 1
 fi
 
-export repopath="${VERONICA_USERNAME}/igitit"
-export parent_repopath="${TIM_USERNAME}/igitit"
+export repopath="${VERONICA_USERNAME}/igitit-veronica"
 export repo="git@github.com:${repopath}"
 export workdir='/tmp/veronica/igitit'

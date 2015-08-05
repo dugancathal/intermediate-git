@@ -8,3 +8,5 @@ telltmux "git remote add veronica $repo"
 telltmux "git fetch veronica"
 telltmux "git checkout veronica/pings-have-creation-times"
 telltmux "git show"
+
+wait_for_input

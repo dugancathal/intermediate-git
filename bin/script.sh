@@ -1,6 +1,7 @@
 #!/bin/bash
 
 curdir=$(dirname $0)
+source $curdir/helpers.sh
 
 echo 'Setting up the scene'
 ./$curdir/set-the-scene.sh

@@ -3,24 +3,26 @@ curdir=$(dirname $0)
 source $curdir/helpers.sh
 source $curdir/veronica-config.sh
 
+echo 'Veronica: Setting up github (forking)'
+curl -s -u "${VERONICA_AUTH}" -XDELETE https://api.github.com/repos/${repopath} >/dev/null
+curl -s -u "${VERONICA_AUTH}" -XPOST https://api.github.com/user/repos -d '{"name": "igitit-veronica"}' >/dev/null
+
 echo 'Veronica: Setting up local' $workdir
+telltmux "git remote add veronica $repo"
+telltmux "git push veronica master"
+telltmux 'clear'
+
 intmux split-window -h
 telltmux 'exec bash'
 rm -rf $workdir
 mkdir -p $(dirname $workdir)
 
-echo 'Veronica: Setting up github (forking)'
-curl -s -u "${VERONICA_AUTH}" -XDELETE https://api.github.com/repos/${repopath} >/dev/null
-curl -s -u "${VERONICA_AUTH}" -XPOST https://api.github.com/repos/${parent_repopath}/forks >/dev/null
-
 echo 'Veronica: About to clone and make changes'
 wait_if_presenting
 telltmux "cd $(dirname $workdir)"
-sleep 1
-telltmux "git clone --quiet $repo"
-sleep 1
+telltmux "git clone --quiet $repo $workdir"
 telltmux "cd $workdir"
-sleep 0.5
+telltmux "git config --local user.name 'Veronica'"
 
 echo 'Veronica: Creating feature branch'
 wait_if_presenting

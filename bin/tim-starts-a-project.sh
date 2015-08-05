@@ -8,17 +8,18 @@ rm -rf $workdir
 mkdir -p $workdir
 echo 'Setting up github'
 curl -s -u "${TIM_AUTH}" -XDELETE https://api.github.com/repos/${repopath} >/dev/null
-curl -s -u "${TIM_AUTH}" -XPOST https://api.github.com/user/repos -d '{"name": "igitit"}' >/dev/null
+curl -s -u "${TIM_AUTH}" -XPOST https://api.github.com/user/repos -d '{"name": "igitit-tim"}' >/dev/null
 
 echo 'Tim: About to create project locally.'
 wait_if_presenting
 inpane 0
 telltmux 'exec bash'
 telltmux "cd $workdir"
-telltmux "echo '# Imma project!' > wait_if_presentingME.md"
+telltmux "echo '# Imma project!' > README.md"
 telltmux 'git init'
 telltmux 'git status'
 telltmux 'git add .'
+telltmux "git config --local user.name 'Tim'"
 
 echo 'Tim: about to commit'
 wait_if_presenting

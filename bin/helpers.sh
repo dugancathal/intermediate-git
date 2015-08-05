@@ -23,7 +23,11 @@ function telltmux() {
 }
 
 function wait_if_presenting() {
-  if [ ! -z $PRESENTING ] {
-    wait_if_presenting
-  }
+  if [ ! -z $PRESENTING ]; then
+    wait_for_input
+  fi
+}
+
+function wait_for_input() {
+  read
 }
