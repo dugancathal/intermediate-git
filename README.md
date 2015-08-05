@@ -10,3 +10,11 @@ cd intermediate-git
 cd talk
 rackup
 ```
+
+## Setting up the Tim/Veronica Story
+
+```bash
+git clone https://github.com/dugancathal/intermediate-git.git
+cd intermediate-git
+./bin/script.sh
+```
